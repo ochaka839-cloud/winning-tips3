@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Premium 
+Tips</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #22c55e;
+    }
+
+    .tip-card {
+      background: #0f172a;
+      margin: 20px auto;
+      padding: 20px;
+      width: 320px;
+      border-radius: 12px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .locked {
+      filter: blur(6px);
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: red;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: #22c55e;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+    .free {
+      background: #1e293b;
+      border: 1px solid #22c55e;
+    }
+
+    .countdown {
+      color: #facc15;
+      margin-top: 10px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🔥 Premium Betting Tips 🔥</h1>
+  <p>High Odds (3–6) | Daily Winning Strategy</p>
+
+  <!-- FREE TIP -->
+  <div class="tip-card free">
+    <h3>🎁 Free Tip</h3>
+    <p>Man City vs Liverpool - Over 2.5 Goals</p>
+    <p><b>Odds:</b> 1.75</p>
+    <p><b>Confidence:</b> 85%</p>
+  </div>
+
+  <!-- VIP TIP -->
+  <div class="tip-card">
+    <span class="badge">VIP 🔒</span>
+    <h3>Tip #1</h3>
+    <p class="locked">Arsenal vs Chelsea - Over 2.5 Goals</p>
+    <p><b>Odds:</b> 3.40</p>
+    <p><b>Confidence:</b> 92%</p>
+    <button onclick="unlockTip()">Unlock - WhatsApp (2000shs)</button>
+  </div>
+
+  <div class="tip-card">
+    <span class="badge">VIP 🔒</span>
+    <h3>Tip #2</h3>
+    <p class="locked">Real Madrid to Win & BTTS</p>
+    <p><b>Odds:</b> 4.10</p>
+    <p><b>Confidence:</b> 90%</p>
+    <button onclick="unlockTip()">Unlock - Whatsapp (2000sha)</button>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown">
+    ⏳ Tips expire in: <span id="timer"></span>
+  </div>
+
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <div class="whatsapp" onclick="contactWhatsApp()">💬</div>
+
+  <script>
+    function unlockTip() {
+      let phoneNumber = "256705000279"; 
+      let message = "Hello, I want VIP betting tips";
+
+      let url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+      window.location.href = url;
+    }
+
+    function contactWhatsApp() {
+      window.location.href = "https://wa.me/256705000279";
+    }
+
+    // COUNTDOWN TIMER
+    let timeLeft = 3600; // 1 hour
+
+    setInterval(() => {
+      let minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
+
+      document.getElementById("timer").innerHTML =
+        minutes + "m " + seconds + "s";
+
+      timeLeft--;
+
+      if (timeLeft <= 0) {
+        document.getElementById("timer").innerHTML = "Expired";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
